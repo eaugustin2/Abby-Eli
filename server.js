@@ -1,17 +1,21 @@
-//To "import" http functionalities
+//Used to handle webpage requests
+
+//"Importing" http functionalities to use
 var http = require('http');
 
+function onRequest(request,response){
 
-//Function to handle incoming requests
-//Sets a type for response
-//outputs a response
-//ends response outputs
-function onRequest(request, response){
+//Sets the type of the response that will be outputted to webpage
 response.writeHead(200, {'Content-Type' : 'text/plain'});
+
+//Actual output to the webpage based on parameters
 response.write("Hello World");
+
+//To end the responses
 response.end();
 }
 
-//Creates a server to listen on port 8000
-//Handles any requests coming through this port
+
+//Creating a server on port 8000
+//Will go to onRequest to handle webpage requests
 http.createServer(onRequest).listen(8000);
