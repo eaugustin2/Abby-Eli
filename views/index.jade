@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= 'Start'
+  p Welcome to the #{title}
+  
+  body
+    //Form action is used to send the data to correct location
+    //action has to be route used to go to website
+    // Why does it have to have submit to work?
+    form(action= '/main/submit' method= 'post')
+        p Name:
+        input(type= 'text', name= 'id')
+        input(type= 'Submit')
